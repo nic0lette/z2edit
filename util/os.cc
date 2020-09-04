@@ -112,6 +112,9 @@ std::string Executable() {
     snprintf(self, sizeof(self), "/proc/self/exe");
 #elif defined(__FreeBSD__)
     snprintf(self, sizeof(self), "/proc/%d/file", getpid());
+#elif defined(__APPLE__) && defined(__MACH__)
+		uint32_t size = sizeof(exepath);
+		_NSGetExecutablePath(exepath, &size);
 #else
 #error "Don't know how to get Executable"
 #endif

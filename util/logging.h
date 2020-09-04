@@ -59,7 +59,7 @@ inline std::string Hex(int64_t x, bool lz=true, bool zx=true) {
     return Hex(uint64_t(x), lz, zx);
 }
 inline std::string Hex(void* x, bool lz=true, bool zx=true) {
-    return Hex(intptr_t(x), lz, zx);
+    return Hex(uint64_t(x), lz, zx);
 }
 
 template<typename ...Args>

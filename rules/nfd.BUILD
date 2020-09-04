@@ -22,6 +22,9 @@ genrule(
     elif [[ -f /lib64/glib-2.0/include/glibconfig.h ]]; then
         # Fedora
         cp /lib64/glib-2.0/include/glibconfig.h $(@)
+    elif [[ -f /opt/local/lib/glib-2.0/include/glibconfig.h ]]; then
+        # macOS
+        cp /opt/local/lib/glib-2.0/include/glibconfig.h $(@)
     fi
     """,
 )

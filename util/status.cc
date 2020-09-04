@@ -76,7 +76,7 @@ std::map<int, Code> posix_errors = {
     { ETIMEDOUT, Code::UNKNOWN },
     { EWOULDBLOCK, Code::UNKNOWN },
     { EXDEV, Code::UNKNOWN },
-#ifndef _WIN32
+#ifdef __linux__
     { EBADE, Code::INVALID_ARGUMENT },
     { EBADFD, Code::INVALID_ARGUMENT },
     { EBADMSG, Code::INVALID_ARGUMENT },
